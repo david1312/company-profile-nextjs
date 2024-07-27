@@ -1,5 +1,6 @@
 import logoGreenText from "@/src/assets/images/icon/logo-green-text.png";
 import Image from "next/image";
+import "./globals.css";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
           alt=""
           src={logoGreenText}
           priority={true}
-          className="text-center object-cover h-96 w-96 -mt-24"
+          className="text-center object-cover h-96 w-100 -mt-24"
         />
 
         <p className="text-lg max-w-xl text-center ">
