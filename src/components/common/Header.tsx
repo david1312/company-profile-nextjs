@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import Link from "next/link";
 import logo from "@/src/assets/images/icon/logo-green.png";
@@ -34,8 +35,8 @@ const Header: React.FC = () => {
       subMenu: [
         { title: "Bitcoin Mining", to: "/operation/bitcoin-mining", id: 21 },
         {
-          title: "BitBoltz Academy (Coming Soon)",
-          to: "/coming-soon",
+          title: "BitBoltz Academy",
+          to: "/operation/bitboltz-academy",
           id: 22,
         },
       ],
@@ -46,7 +47,7 @@ const Header: React.FC = () => {
       title: "Bitcoin",
       subMenu: [
         { title: "Bitcoin Network", to: "/coming-soon", id: 31 },
-        { title: "Blog & News (Coming Soon)", to: "/coming-soon", id: 32 },
+        { title: "Blog & News", to: "/coming-soon", id: 32 },
       ],
     },
     {
@@ -63,7 +64,7 @@ const Header: React.FC = () => {
     {
       id: 5,
       to: "/coming-soon",
-      title: "Partnership (Coming Soon)",
+      title: "Partnership",
       subMenu: [],
     },
     {
@@ -83,7 +84,7 @@ const Header: React.FC = () => {
       <MegaMenu className=" text-white header bg-b-black">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4 md:space-x-8 text-white text-nowrap bg-b-black">
           <Navbar.Brand as={Link} href="/" key={"myRandomekey"}>
-            <img alt="" src={logo.src} className="mr-3 h-6 sm:h-9" />
+            <img alt="asd" src={logo.src} className="mr-3 h-6 sm:h-9" />
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
               BITBOLTZ
             </span>
