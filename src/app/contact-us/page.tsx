@@ -8,7 +8,7 @@ const ContactUs: React.FC = () => {
           className="text-center b-section-title text-white"
           style={{ marginTop: "-20px", padding: "10px" }}
         >
-          <p className="max-w-xl cool-text">Contact Us</p>
+          <p className="max-w-xl cool-text">Contact Us x</p>
         </div>
 
         <div className="flex justify-center p-2 sm:p-4 md:p-4 lg:p-4 xl:p-4"></div>
