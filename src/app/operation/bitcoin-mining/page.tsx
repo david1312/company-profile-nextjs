@@ -14,7 +14,7 @@ const BitcoinMining: React.FC = () => {
           className="text-center b-section-title text-white"
           style={{ marginTop: "-20px", padding: "10px" }}
         >
-          <p className="max-w-xl ">Bitcoin Mining Operations</p>
+          <p className="max-w-xl ">BitBoltz Bitcoin Mining</p>
         </div>
 
         {CURRENT_PROJECT.map((val, i) => {
@@ -23,7 +23,7 @@ const BitcoinMining: React.FC = () => {
               className="flex justify-center p-2 sm:p-4 md:p-4 lg:p-4 xl:p-4"
               key={`project${i}`}
             >
-              <div className="b-container-card bg-b-card-sec p-4 sm:p-6 rounded-2xl text-white max-w-5xl">
+              <div className="b-container-card bg-b-card-sec p-4 sm:p-6 rounded-2xl text-white max-w-5xl flex-auto">
                 <div className="grid grid-cols-8 gap-4">
                   <div className="col-span-8 sm:col-span-4 content-center">
                     <img
@@ -73,7 +73,7 @@ const BitcoinMining: React.FC = () => {
               className="flex justify-center p-2 sm:p-4 md:p-4 lg:p-4 xl:p-4"
               key={`project${i}`}
             >
-              <div className="b-container-card bg-b-card-sec p-4 sm:p-6 rounded-2xl text-white max-w-5xl">
+              <div className="b-container-card bg-b-card-sec p-4 sm:p-6 rounded-2xl text-white max-w-5xl flex-auto">
                 <div className="grid grid-cols-8 gap-4">
                   <div className="col-span-8 sm:col-span-4 content-center">
                     <img
@@ -83,8 +83,8 @@ const BitcoinMining: React.FC = () => {
                     />
                   </div>
                   <div className="col-span-8 sm:col-span-4 ">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="col-span-1 text-lg">{val.title}</div>
+                    <div className="grid grid-cols-4 gap-4">
+                      <div className="col-span-3 text-lg">{val.title}</div>
                       <div className="col-span-1 float-right">
                         <img
                           src={val.icon}
@@ -95,10 +95,10 @@ const BitcoinMining: React.FC = () => {
                       {val.spec.map((spec, indexSpec) => {
                         return (
                           <React.Fragment key={`spec${indexSpec}`}>
-                            <div className="col-span-1 text-sm">
+                            <div className="col-span-2 text-sm">
                               {spec.title}
                             </div>
-                            <div className="col-span-1 text-sm">
+                            <div className="col-span-2 text-sm">
                               : {spec.value}
                             </div>
                           </React.Fragment>
@@ -138,8 +138,8 @@ const BitcoinMining: React.FC = () => {
                     />
                   </div>
                   <div className="col-span-8 sm:col-span-4 ">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="col-span-1 text-lg">{val.title}</div>
+                    <div className="grid grid-cols-4 gap-4">
+                      <div className="col-span-3 text-lg">{val.title}</div>
                       <div className="col-span-1 float-right">
                         <img
                           src={val.icon}
@@ -150,10 +150,10 @@ const BitcoinMining: React.FC = () => {
                       {val.spec.map((spec, indexSpec) => {
                         return (
                           <React.Fragment key={`spec${indexSpec}`}>
-                            <div className="col-span-1 text-sm">
+                            <div className="col-span-2 text-sm">
                               {spec.title}
                             </div>
-                            <div className="col-span-1 text-sm">
+                            <div className="col-span-2 text-sm">
                               : {spec.value}
                             </div>
                           </React.Fragment>

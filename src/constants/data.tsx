@@ -7,7 +7,7 @@ import management from "@/src/assets/images/common/management.webp";
 import btc1 from "@/src/assets/images/common/btc1.jpeg";
 import btc2 from "@/src/assets/images/common/btc2.jpeg";
 import btc3 from "@/src/assets/images/common/btc3.png";
-import indo from "@/src/assets/images/icon/indonesia.svg";
+import indo from "@/src/assets/images/icon/indo.jpg";
 import project1 from "@/src/assets/images/common/project1.webp";
 import project2 from "@/src/assets/images/common/project2.webp";
 import project3 from "@/src/assets/images/common/project3.webp";
@@ -186,7 +186,7 @@ export const LIST_PROJECT = [
       { title: "Cooling System", value: "Air Cooler & Hydro" },
       { title: "Est. BTC Production Capacity", value: "7,91457605 BTC / Year" },
     ],
-    icon: indo,
+    icon: indo.src,
     img: project1.src,
   },
   {
@@ -198,7 +198,7 @@ export const LIST_PROJECT = [
       { title: "Cooling System", value: "Full Hydro" },
       { title: "Est. BTC Production Capacity", value: "8,61496367 BTC / Year" },
     ],
-    icon: indo,
+    icon: indo.src,
     img: project2.src,
   },
   {
@@ -213,7 +213,7 @@ export const LIST_PROJECT = [
       },
       { title: "Est. BTC Production Capacity", value: "9,41745411 BTC / Year" },
     ],
-    icon: indo,
+    icon: indo.src,
     img: immersion.src,
   },
   {
@@ -231,7 +231,7 @@ export const LIST_PROJECT = [
         value: "10,65825323 BTC / Year",
       },
     ],
-    icon: indo,
+    icon: indo.src,
     img: project3.src,
   },
   {
@@ -249,7 +249,7 @@ export const LIST_PROJECT = [
         value: "12,11864543 BTC / Year",
       },
     ],
-    icon: indo,
+    icon: indo.src,
     img: solarproj.src,
   },
 ];
@@ -263,16 +263,16 @@ export const CURRENT_PROJECT = [
       { title: "Efficiency", value: "15 J/T" },
       { title: "Cooling System", value: "Air Cooling" },
       { title: "Energy Source", value: "PLN Grid Electricity" },
-      { title: "Est. BTC Production Capacity", value: "1,02492647 BTC / Year" },
     ],
-    icon: indo,
+    icon: indo.src,
     img: antminer.src,
   },
 ];
 
 export const PROJECT_COMBINED = [
   {
-    title: "BitBoltz Project Merged",
+    title:
+      "BitBoltz Bitcoin Mining Capacity (Planned After All Projects are Merged)",
     spec: [
       { title: "Hashrates Computing Power", value: "166.750 Th/s" },
       { title: "Electricity Power", value: "1.772.750 Watt (1,7 MW)" },
@@ -284,7 +284,7 @@ export const PROJECT_COMBINED = [
       },
       { title: "Est. BTC Production Capacity", value: "48,6 BTC / Year" },
     ],
-    icon: indo,
+    icon: indo.src,
     img: project4.src,
   },
 ];

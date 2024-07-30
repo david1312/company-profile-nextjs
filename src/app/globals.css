@@ -52,6 +52,10 @@ main section {
   background-color: #0f1601;
 }
 
+.bg-white {
+  background-color: white;
+}
+
 .bg-b-black {
   background-color: #0a0b0f;
 }
@@ -67,6 +71,9 @@ main section {
   background-color: #192129;
 }
 
+.bg-b-fourth {
+  background-color: #dadada;
+}
 .bg-b-card {
   background-color: #151a2a;
 }
@@ -104,13 +111,6 @@ main section {
 .flex.flex-col.min-h-screen {
   background-color: #0a0b0f !important;
 }
-
-/* .first-section {
-  background-image: url("./assets/images/common/blockchain.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
 
 .coming-soon-pg {
   background-image: url("../assets//images//bg//btc.png");

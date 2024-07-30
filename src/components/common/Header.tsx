@@ -3,9 +3,23 @@
 import Link from "next/link";
 import logo from "@/src/assets/images/icon/logo-green.png";
 import "./Header.css";
-import { MegaMenu, Navbar } from "flowbite-react";
+import { MegaMenu, Navbar, Toast } from "flowbite-react";
+import { useState } from "react";
 
 const Header: React.FC = () => {
+  const [langID, setLangID] = useState<boolean>(true);
+  const [showToast, setShowToast] = useState<boolean>(false);
+
+  const onClickLang = (isID: boolean) => {
+    setShowToast(true);
+    setLangID(isID);
+    setTimeout(() => {
+      if (document.querySelector(".toast")) {
+        document.querySelector(".toast")?.classList.add("fade-out");
+      }
+      setShowToast(false);
+    }, 2000);
+  };
   const MENUS = [
     {
       id: 1,
@@ -14,6 +28,11 @@ const Header: React.FC = () => {
       subMenu: [
         { title: "About Us", to: "/", id: 11 },
         { title: "Team & Management Structures", to: "/coming-soon", id: 12 },
+        {
+          title: "BitBoltz Academy",
+          to: "/operation/bitboltz-academy",
+          id: 22,
+        },
         // {
         //   title: "Company Structures ",
         //   to: "/coming-soon",
@@ -34,11 +53,6 @@ const Header: React.FC = () => {
       title: "Operation",
       subMenu: [
         { title: "Bitcoin Mining", to: "/operation/bitcoin-mining", id: 21 },
-        {
-          title: "BitBoltz Academy",
-          to: "/operation/bitboltz-academy",
-          id: 22,
-        },
       ],
     },
     {
@@ -46,7 +60,7 @@ const Header: React.FC = () => {
       to: "/",
       title: "Bitcoin",
       subMenu: [
-        { title: "Bitcoin Network", to: "/coming-soon", id: 31 },
+        { title: "Bitcoin Overview", to: "/coming-soon", id: 31 },
         { title: "Blog & News", to: "/coming-soon", id: 32 },
       ],
     },
@@ -69,7 +83,7 @@ const Header: React.FC = () => {
     },
     {
       id: 6,
-      to: "/coming-soon",
+      to: "/contact-us",
       title: "Contact Us",
       subMenu: [],
     },
@@ -81,7 +95,7 @@ const Header: React.FC = () => {
         <span>Bitcoin Price (IDR): Rp 1.050.657.659,00</span>
         <span>Network Difficulty : 79.50 T</span>
       </div>
-      <MegaMenu className=" text-white header bg-b-black">
+      <MegaMenu className="text-white header bg-b-black relative">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4 md:space-x-8 text-white text-nowrap bg-b-black">
           <Navbar.Brand as={Link} href="/" key={"myRandomekey"}>
             <img alt="asd" src={logo.src} className="mr-3 h-6 sm:h-9" />
@@ -120,7 +134,30 @@ const Header: React.FC = () => {
             })}
           </Navbar.Collapse>
         </div>
+        <div className="langToogle">
+          <span
+            className={langID ? "langToogle-Active" : ""}
+            onClick={() => onClickLang(true)}
+          >
+            ID
+          </span>{" "}
+          |{" "}
+          <span
+            className={!langID ? "langToogle-Active" : ""}
+            onClick={() => onClickLang(false)}
+          >
+            EN
+          </span>
+        </div>
       </MegaMenu>
+      {showToast && (
+        <Toast className="toast">
+          <div className="ml-3 text-sm font-normal cool-text">
+            Language changed successfully!.
+          </div>
+          <Toast.Toggle />
+        </Toast>
+      )}
     </>
   );
 };
