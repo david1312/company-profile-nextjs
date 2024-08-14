@@ -1,9 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
+
 import logoGreenText from "@/src/assets/images/icon/logo-green-text.png";
 import Image from "next/image";
 import { LIST_CARD } from "@/src/constants/data";
+import usePingServer from "../hooks/usePing";
+import { useEffect } from "react";
 
 export default function Home() {
+  const { serverStatus, pingServer } = usePingServer();
+
+  useEffect(() => {
+    pingServer(); // Automatically ping the server when the component mounts
+  }, [pingServer]); // Empty dependency array ensures this runs only once
+
   return (
     <div className="flex flex-col min-h-screen first-section">
       <section className="flex flex-col justify-center items-center  text-white h-screen p-2 sm:p-4 md:p-4 lg:p-4 xl:p-4">

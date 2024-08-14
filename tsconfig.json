@@ -21,12 +21,19 @@
       "@/*": ["./*"]
     }
   },
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/**/*.ts*"
+    "src/**/*.ts*",
+    "server.js"
   ],
   "exclude": ["node_modules"]
 }
