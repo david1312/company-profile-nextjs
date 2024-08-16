@@ -6,6 +6,10 @@ This is my playground for learning [Next.js](https://nextjs.org/). I'm using thi
 
 In addition to learning Next.js, this repository also serves as the foundation for a personal project where I'm being a good brother by helping my sibling create a prototype web company profile based on a crypto miner company theme.
 
+### Hosting Information:
+
+This web application is hosted on cPanel at [bitboltz.co.id]
+
 ### Planned Improvements:
 
 When I have free time, I plan to implement the following improvements:
