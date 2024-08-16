@@ -97,3 +97,40 @@ nav a {
   border: none;
   /* Add any other properties you want to override */
 }
+
+.langToogle {
+  font-weight: bold;
+}
+
+.langToogle:hover {
+  cursor: pointer;
+}
+
+.langToogle-Active {
+  background: linear-gradient(90deg, #01c7eb, #03f66f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}
+
+.toast {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 2s ease-out;
+}
+
+.toast.fadeout {
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

@@ -52,6 +52,10 @@ main section {
   background-color: #0f1601;
 }
 
+.bg-white {
+  background-color: white;
+}
+
 .bg-b-black {
   background-color: #0a0b0f;
 }
@@ -67,6 +71,9 @@ main section {
   background-color: #192129;
 }
 
+.bg-b-fourth {
+  background-color: #dadada;
+}
 .bg-b-card {
   background-color: #151a2a;
 }
@@ -105,25 +112,53 @@ main section {
   background-color: #0a0b0f !important;
 }
 
-/* .first-section {
-  background-image: url("./assets/images/common/blockchain.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
-
 .coming-soon-pg {
-  background-image: url("../assets//images//bg//soon.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url("../assets//images//bg//btc.png");
   background-position: center;
 }
 
 @media only screen and (max-width: 600px) {
   .coming-soon-pg {
-    background-image: url("../assets//images//bg//soon.webp");
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-image: url("../assets//images//bg//btc.png");
     background-position: center;
   }
+}
+
+.cool-text {
+  background: linear-gradient(90deg, #01c7eb, #03f66f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.layout {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.layout.animating {
+  opacity: 0;
+}
+
+.pg-container {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  flex-direction: row;
+}
+
+.pg-input-field {
+  display: flex;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+}
+
+.pg-input-field:focus {
+  border: none;
+  border: 2px solid greenyellow;
+}
+
+.basic-layout {
+  padding: 10px;
 }

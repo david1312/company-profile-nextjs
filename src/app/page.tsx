@@ -1,8 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
+"use client";
+
 import logoGreenText from "@/src/assets/images/icon/logo-green-text.png";
 import Image from "next/image";
-import "./globals.css";
+import { LIST_CARD } from "@/src/constants/data";
+import usePingServer from "../hooks/usePing";
+import { useEffect } from "react";
 
 export default function Home() {
+  const { serverStatus, pingServer } = usePingServer();
+
+  useEffect(() => {
+    pingServer(); // Automatically ping the server when the component mounts
+  }, [pingServer]); // Empty dependency array ensures this runs only once
+
   return (
     <div className="flex flex-col min-h-screen first-section">
       <section className="flex flex-col justify-center items-center  text-white h-screen p-2 sm:p-4 md:p-4 lg:p-4 xl:p-4">
@@ -10,13 +21,18 @@ export default function Home() {
           alt=""
           src={logoGreenText}
           priority={true}
-          className="text-center object-cover h-96 w-100 -mt-24"
+          className="text-center object-cover h-96 w-96 -mt-24"
         />
 
         <p className="text-lg max-w-xl text-center ">
-          Contribute to securing and building the bitcoin blockchain network
-          infrastructure and turning electrical energy into store of value and
-          bringing it to the Indonesian people society.
+          Test Deploy Contribute to securing and building the bitcoin blockchain
+          network infrastructure and turning electrical energy into store of
+          value and bringing it to the Indonesian people society.
+        </p>
+        <br />
+        <p className="cool-text">
+          “We believe the Bitcoin industry, Blockchain Technology and Web 3.0
+          are the future”
         </p>
       </section>
       <div className="bg-b-line p-2 sm:p-4 md:p-4 lg:p-4 xl:p-4">
@@ -34,7 +50,7 @@ export default function Home() {
           </p>
         </div>
 
-        {/* {LIST_CARD.map((val, i) => {
+        {LIST_CARD.map((val, i) => {
           return (
             <div
               className="flex justify-center p-2 sm:p-4 md:p-4 lg:p-4 xl:p-4"
@@ -57,7 +73,7 @@ export default function Home() {
               </div>
             </div>
           );
-        })} */}
+        })}
       </div>
     </div>
   );
