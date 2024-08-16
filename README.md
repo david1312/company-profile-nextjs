@@ -1,4 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Next.js Playground
+
+This is my playground for learning [Next.js](https://nextjs.org/). I'm using this project to experiment with various features and capabilities of Next.js.
+
+### Personal Project:
+
+In addition to learning Next.js, this repository also serves as the foundation for a personal project where I'm being a good brother by helping my sibling create a prototype web company profile based on a crypto miner company theme.
+
+### Planned Improvements:
+
+When I have free time, I plan to implement the following improvements:
+
+- **Image Optimization**: Use `next/image` for optimizing images to improve performance (also consider changing all png/jpg to webp).
+- **Skeleton Loader**: Add a skeleton loader to enhance the user experience during data loading.
+- **i18n Support**: Implement internationalization (i18n) for English and Indonesian languages.
+- **State Management**: Use XState or Redux for saving the language state and managing the scraping daily task.
+- **Bitcoin Price Scraping**: Implement scraping for the latest Bitcoin information to display on the top bar.
+- **Etc.**: Additional features and improvements will be added over time.
+
+If you have any suggestions, feedback, or issues, feel free to add them in the [Issues tab](https://github.com/david1312/company-profile-nextjs/issues). If you're interested in contributing, you can email me at [davidbernadi13@gmail.com](mailto:davidbernadi13@gmail.com) to request access.
+
+This project was bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
