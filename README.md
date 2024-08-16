@@ -10,11 +10,12 @@ In addition to learning Next.js, this repository also serves as the foundation f
 
 When I have free time, I plan to implement the following improvements:
 
-- **Image Optimization**: Use `next/image` for optimizing images to improve performance (also consider changing all png/jpg to webp).
+- **Image Optimization**: Use `next/image` for optimizing images to improve performance (also considering migrate jpg/png into webp).
 - **Skeleton Loader**: Add a skeleton loader to enhance the user experience during data loading.
 - **i18n Support**: Implement internationalization (i18n) for English and Indonesian languages.
 - **State Management**: Use XState or Redux for saving the language state and managing the scraping daily task.
 - **Bitcoin Price Scraping**: Implement scraping for the latest Bitcoin information to display on the top bar.
+- **E2E Testing**: Set up and run end-to-end (E2E) tests using Cypress to ensure the application works as expected.
 - **Etc.**: Additional features and improvements will be added over time.
 
 If you have any suggestions, feedback, or issues, feel free to add them in the [Issues tab](https://github.com/david1312/company-profile-nextjs/issues). If you're interested in contributing, you can email me at [davidbernadi13@gmail.com](mailto:davidbernadi13@gmail.com) to request access.
