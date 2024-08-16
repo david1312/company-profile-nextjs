@@ -1,6 +1,6 @@
 # My Next.js Playground
 
-This is my playground for learning [Next.js](https://nextjs.org/). I'm using this project to experiment with various features and capabilities of Next.js.
+This is my playground for learning [Next.js](https://nextjs.org/). I'm using this project to experiment with various features and capabilities of Next.js using app router.
 
 ### Personal Project:
 
