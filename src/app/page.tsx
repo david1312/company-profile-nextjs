@@ -11,8 +11,6 @@ export default function Home() {
   const { pingServer } = usePingServer();
 
   useEffect(() => {
-    console.log("hello");
-
     pingServer();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Empty dependency array ensures this runs only once

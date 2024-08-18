@@ -113,13 +113,13 @@ main section {
 }
 
 .coming-soon-pg {
-  background-image: url("../assets//images//bg//btc.png");
+  background-image: url("../assets//images//bg//btc.webp");
   background-position: center;
 }
 
 @media only screen and (max-width: 600px) {
   .coming-soon-pg {
-    background-image: url("../assets//images//bg//btc.png");
+    background-image: url("../assets//images//bg//btc.webp");
     background-position: center;
   }
 }

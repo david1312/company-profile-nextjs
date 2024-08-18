@@ -1,22 +1,27 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
 import { NextResponse } from "next/server";
+import { StatusCodes } from "http-status-codes";
 import { mockHashrate } from "@/public/mocks/scrap-hashrate";
 import { mockDifficulty } from "@/public/mocks/scrap-difficulty";
 import { mockBTCIDR } from "@/public/mocks/scrap-btcidr";
+import { formatNumber } from "@/src/utils/common";
+import { HeaderDataResponse, ErrorResponse } from "@/src/types/apiResponses";
 
-export async function GET(request: Request) {
-  const useMockData = process.env.USE_MOCK_DATA === "true";
+export async function GET(
+  request: Request
+): Promise<NextResponse<HeaderDataResponse | ErrorResponse>> {
+  const useMockData = process.env.MOCK_MODE === "true";
 
   try {
     let data1, data2, data3;
 
-    if (true) {
+    if (useMockData) {
       // Use mock data
+      console.log("using mock data");
       data1 = mockHashrate;
       data2 = mockDifficulty;
       data3 = mockBTCIDR;
-      console.log("as");
     } else {
       // URLs to fetch data from
       const url1 = "https://www.coinwarz.com/mining/bitcoin/hashrate-chart";
@@ -35,7 +40,6 @@ export async function GET(request: Request) {
       data3 = response3.data;
 
       console.log("Fetched data from actual URLs");
-      console.log(data1);
     }
 
     // Load the HTML into Cheerio for each response
@@ -52,25 +56,20 @@ export async function GET(request: Request) {
       .text();
     const btcIDR = $3("title").text().trim();
 
-    console.log("asubai");
-    console.log(hashRate);
-    console.log(btcDifficulty);
-    console.log(btcIDR);
-    // console.log("Site 2 Data:", someDataFromSite2);
-    // console.log("Site 3 Data:", someDataFromSite3);
-
-    // Return the extracted data
+    // Directly return the response with NextResponse.json
     return NextResponse.json({
-      hashRate,
-      raw: data1,
-      //   someDataFromSite2,
-      //   someDataFromSite3,
-    });
+      hashRate: formatNumber(hashRate || ""),
+      btcDifficulty: formatNumber(btcDifficulty),
+      btcIdr: formatNumber(btcIDR),
+      time: new Date().toISOString().split("T")[0],
+    } as HeaderDataResponse);
   } catch (error) {
     console.error("Error scraping data:", error);
+
+    // Directly return the error response with NextResponse.json
     return NextResponse.json(
-      { error: "Failed to fetch data" },
-      { status: 500 }
+      { error: "Failed to fetch data" } as ErrorResponse,
+      { status: StatusCodes.INTERNAL_SERVER_ERROR }
     );
   }
 }

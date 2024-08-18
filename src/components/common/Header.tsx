@@ -4,29 +4,20 @@ import Link from "next/link";
 import logo from "@/src/assets/images/icon/logo-green.png";
 import "./Header.css";
 import { MegaMenu, Navbar, Toast } from "flowbite-react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
+import { headerKey } from "@/src/constants";
+import { HeaderDataResponse } from "@/src/types/apiResponses";
 
 const Header: React.FC = () => {
   const [langID, setLangID] = useState<boolean>(true);
   const [showToast, setShowToast] = useState<boolean>(false);
-  console.log("this is header");
-
-  const fetchData = async () => {
-    try {
-      const res = await axios.get("/api/scraping", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      console.log(res);
-      console.log("thisis data", res.data);
-
-      localStorage.setItem("test", res.data?.raw);
-      // console.log({ data, res });
-    } catch (error) {}
-  };
+  const [headerData, setHeaderData] = useState<HeaderDataResponse>({
+    btcDifficulty: "",
+    btcIdr: "",
+    hashRate: "",
+    time: "",
+  });
 
   const onClickLang = (isID: boolean) => {
     setShowToast(true);
@@ -107,15 +98,50 @@ const Header: React.FC = () => {
     },
   ];
 
-  useEffect(() => {
-    fetchData(); // Fetch the data when the component mounts
+  const fetchData = async () => {
+    try {
+      const res = await axios.get<HeaderDataResponse>("/api/scraping", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      localStorage.setItem(headerKey, JSON.stringify(res.data));
+      setHeaderData(res.data);
+    } catch (error) {
+      console.error("error when fetch Header Data:", error);
+    }
+  };
+
+  const checkAndFetchData = useCallback(() => {
+    const storedData = localStorage.getItem(headerKey);
+    if (storedData) {
+      const parsedData: HeaderDataResponse = JSON.parse(storedData);
+      const storedDate = parsedData.time;
+
+      const currentDate = new Date().toISOString().split("T")[0];
+
+      // Check if the stored date is the same as today's date
+      if (storedDate === currentDate) {
+        console.log("Data is already up to date:", parsedData);
+        setHeaderData(parsedData);
+        return; // No need to fetch new data
+      }
+    }
+
+    // Fetch new data if no valid data is found in localStorage
+    fetchData();
   }, []);
+
+  useEffect(() => {
+    checkAndFetchData(); // Fetch the data when the component mounts
+  }, [checkAndFetchData]);
   return (
     <>
       <div className="top-bar">
-        <span>Global Hashrates: 592.87 EH/s</span>
-        <span>Bitcoin Price (IDR): Rp 1.050.657.659,00</span>
-        <span>Network Difficulty : 79.50 T</span>
+        <span>Global Hashrates: {headerData.hashRate} EH/s</span>
+        <span>Bitcoin Price (IDR): Rp {headerData.btcIdr}</span>
+        <span>Bitcoin Difficulty : {headerData.btcDifficulty} T</span>
       </div>
       <MegaMenu className="text-white header bg-b-black relative">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4 md:space-x-8 text-white text-nowrap bg-b-black">
