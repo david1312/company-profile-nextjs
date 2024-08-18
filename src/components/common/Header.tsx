@@ -13,9 +13,9 @@ const Header: React.FC = () => {
   const [langID, setLangID] = useState<boolean>(true);
   const [showToast, setShowToast] = useState<boolean>(false);
   const [headerData, setHeaderData] = useState<HeaderDataResponse>({
-    btcDifficulty: "",
-    btcIdr: "",
-    hashRate: "",
+    btcDifficulty: "86.87",
+    btcIdr: "935,967,272.00",
+    hashRate: "643.38",
     time: "",
   });
 

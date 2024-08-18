@@ -26,7 +26,7 @@ export default function Home() {
         />
 
         <p className="text-lg max-w-xl text-center ">
-          hello xxContribute to securing and building the bitcoin blockchain
+          BRoo xxContribute to securing and building the bitcoin blockchain
           network infrastructure and turning electrical energy into store of
           value and bringing it to the Indonesian people society.
         </p>
