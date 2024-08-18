@@ -18,8 +18,6 @@ When I have free time, I plan to implement the following improvements:
 - **E2E Testing**: Set up and run end-to-end (E2E) tests using Cypress to ensure the application works as expected.
 - **Etc.**: Additional features and improvements will be added over time.
 
-If you have any suggestions, feedback, or issues, feel free to add them in the [Issues tab](https://github.com/david1312/company-profile-nextjs/issues). If you're interested in contributing, you can email me at [davidbernadi13@gmail.com](mailto:davidbernadi13@gmail.com) to request access.
-
 This project was bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
