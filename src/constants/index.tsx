@@ -176,9 +176,16 @@ export const LIST_CARD: Card[] = [
   },
 ];
 
+export const MINING_TYPE = {
+  AIR_COOLED: "AIR_COOLED",
+  HYDRO_COOLED: "HYDRO_COOLED",
+  IMMERSION: "IMMERSION",
+  OTHERS: "OTHERS",
+};
+
 export const LIST_PROJECT = [
   {
-    title: "Air Cooler & Hydro Bitcoin Mining Farm (P1)",
+    title: "Air Cooler & Hydro Bitcoin Mining Farm",
     spec: [
       { title: "Hashrates Computing Power", value: "27.000 TH/s" },
       { title: "Electricity Power", value: "327.750 Watt" },
@@ -188,9 +195,10 @@ export const LIST_PROJECT = [
     ],
     icon: indo.src,
     img: project1.src,
+    type: MINING_TYPE.AIR_COOLED,
   },
   {
-    title: "Full Hydro Bitcoin Mining Farm (P2)",
+    title: "Full Hydro Bitcoin Mining Farm",
     spec: [
       { title: "Hashrates Computing Power", value: "29.500 TH/s" },
       { title: "Electricity Power", value: "330.000 Watt" },
@@ -200,9 +208,10 @@ export const LIST_PROJECT = [
     ],
     icon: indo.src,
     img: project2.src,
+    type: MINING_TYPE.HYDRO_COOLED,
   },
   {
-    title: "Full Immersion Bitcoin Mining Farm (P3)",
+    title: "Full Immersion Bitcoin Mining Farm",
     spec: [
       { title: "Hashrates Computing Power", value: "32.250 TH/s" },
       { title: "Electricity Power", value: "350.000 Watt" },
@@ -215,9 +224,10 @@ export const LIST_PROJECT = [
     ],
     icon: indo.src,
     img: immersion.src,
+    type: MINING_TYPE.IMMERSION,
   },
   {
-    title: "Integrated Hydro & Immersion Bitcoin Mining Farm (P4)",
+    title: "Integrated Hydro & Immersion Bitcoin Mining Farm",
     spec: [
       { title: "Hashrates Computing Power", value: "36.500 TH/s" },
       { title: "Electricity Power", value: "365.000 Watt" },
@@ -233,9 +243,10 @@ export const LIST_PROJECT = [
     ],
     icon: indo.src,
     img: project3.src,
+    type: MINING_TYPE.IMMERSION,
   },
   {
-    title: "Bitcoin Mining Farm With Solar Energy Resources (P5)",
+    title: "Bitcoin Mining Farm With Solar Energy Resources",
     spec: [
       { title: "Hashrates Computing Power", value: "41.500 TH/s" },
       { title: "Electricity Power", value: "400.000 Watt" },
@@ -251,6 +262,7 @@ export const LIST_PROJECT = [
     ],
     icon: indo.src,
     img: solarproj.src,
+    type: MINING_TYPE.OTHERS,
   },
 ];
 
@@ -301,21 +313,27 @@ export const NAV_MENUS = [
       { title: "Team & Management", to: "/coming-soon", id: 12 },
       { title: "Partnership", to: "/company/partnership", id: 13 },
     ],
+    inFooter: true,
   },
   {
     id: 2,
     to: "/",
     title: "Operations",
     subMenu: [
-      { title: "Overview", to: "/operation/overview", id: 21 },
+      { title: "Overview", to: "/coming-soon", id: 21 },
       { title: "Air Cooled Miners", to: "/operation/air-cooled-miner", id: 22 },
-      { title: "Hydro Cooled Miners", to: "/operation/hydro-cooled", id: 23 },
+      {
+        title: "Hydro Cooled Miners",
+        to: "/operation/hydro-cooled-miner",
+        id: 23,
+      },
       {
         title: "Immersion Cooled Miners",
-        to: "/operation/immersion-cooled",
+        to: "/operation/immersion-cooled-miner",
         id: 24,
       },
     ],
+    inFooter: true,
   },
   {
     id: 3,
@@ -329,6 +347,7 @@ export const NAV_MENUS = [
         id: 32,
       },
     ],
+    inFooter: false,
   },
   {
     id: 4,
@@ -340,12 +359,14 @@ export const NAV_MENUS = [
       { title: "Annual Reports", to: "/coming-soon", id: 43 },
       { title: "News & Events", to: "/coming-soon", id: 44 },
     ],
+    inFooter: false,
   },
   {
     id: 5,
     to: "/coming-soon",
     title: "Careers",
     subMenu: [],
+    inFooter: false,
   },
 
   {
@@ -353,5 +374,6 @@ export const NAV_MENUS = [
     to: "/contact",
     title: "Contact",
     subMenu: [],
+    inFooter: false,
   },
 ];

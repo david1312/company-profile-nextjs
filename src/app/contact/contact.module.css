@@ -47,11 +47,15 @@
 }
 
 .leftSideFirst {
-  font-size: 18px;
+  font-size: 14px;
 }
 
-.emailCol {
-  color: rgb(254, 157, 0);
+.tableContact {
+  font-size: 12px;
+}
+
+.tableContactSeparator {
+  padding: 0px 4px;
 }
 
 .btnCommon {
@@ -59,4 +63,17 @@
   padding: 2px 15px;
   border-radius: 4rem;
   border: none;
+}
+
+.socialMediaRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialMediaItem {
+  text-align: -webkit-center;
+  width: 48px;
+  padding: 4px;
 }

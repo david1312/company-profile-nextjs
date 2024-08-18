@@ -84,3 +84,28 @@
 .footer-bottom a:hover {
   text-decoration: underline;
 }
+
+.footer-table {
+  font-size: 14px;
+  margin: 0px !important;
+}
+
+.footer-table-separator {
+  padding: 0px 4px;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0px !important;
+  margin-top: -12px !important;
+  width: 120px !important;
+}
+
+.footer-social-item {
+  text-align: -webkit-center;
+  min-width: 28px !important;
+  width: 28px;
+}

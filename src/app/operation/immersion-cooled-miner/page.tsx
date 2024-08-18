@@ -13,9 +13,9 @@ import antminer from "@/src/assets/images/common/antminers21.webp";
 import hardware from "@/src/assets/images/common/hardware2.jpeg";
 import React from "react";
 import Image from "next/image";
-import styles from "./air-cooled-miner.module.css";
+import styles from "./immersion-cooled-miner.module.css";
 
-const AirCooledMiner: React.FC = () => {
+const ImmersionCooledMiner: React.FC = () => {
   return (
     <div className="flex flex-col first-section">
       <div className="bg-b-line p-2 sm:p-4 md:p-4 lg:p-4 xl:p-4">
@@ -149,54 +149,56 @@ const AirCooledMiner: React.FC = () => {
 
       <div className="bg-b-third p-2 sm:p-4 md:p-4 lg:p-4 xl:p-4">
         <div className="text-center b-section-title text-white pt-6">
-          <p className="max-w-xl ">Air Cooled Miner</p>
+          <p className="max-w-xl ">Immersion Cooled Miner & Combine</p>
         </div>
-        {LIST_PROJECT.filter((val) => val.type === MINING_TYPE.AIR_COOLED).map(
-          (val, i) => {
-            return (
-              <div
-                className="flex justify-center p-2 sm:p-4 md:p-4 lg:p-4 xl:p-4"
-                key={`project${i}`}
-              >
-                <div className="b-container-card bg-b-card-sec p-4 sm:p-6 rounded-2xl text-white max-w-5xl flex-auto">
-                  <div className="grid grid-cols-8 gap-4">
-                    <div className="col-span-8 sm:col-span-4 content-center">
-                      <img
-                        src={val.img}
-                        className="rounded-2xl max-w-full sm:max-w-96 sm:w-96 max-h-72 sm:h-72 border-4 border-white"
-                        alt="bitcoin-expert"
-                      />
-                    </div>
-                    <div className="col-span-8 sm:col-span-4 ">
-                      <div className="grid grid-cols-4 gap-4">
-                        <div className="col-span-3 text-lg">{val.title}</div>
-                        <div className="col-span-1 float-right">
-                          <img
-                            src={val.icon}
-                            className="border-2 border-white w-8 h-8 rounded-full float-right"
-                            alt="indoFlag"
-                          />
-                        </div>
-                        {val.spec.map((spec, indexSpec) => {
-                          return (
-                            <React.Fragment key={`spec${indexSpec}`}>
-                              <div className="col-span-2 text-sm">
-                                {spec.title}
-                              </div>
-                              <div className="col-span-2 text-sm">
-                                : {spec.value}
-                              </div>
-                            </React.Fragment>
-                          );
-                        })}
+        {LIST_PROJECT.filter(
+          (val) =>
+            val.type === MINING_TYPE.IMMERSION ||
+            val.type === MINING_TYPE.OTHERS
+        ).map((val, i) => {
+          return (
+            <div
+              className="flex justify-center p-2 sm:p-4 md:p-4 lg:p-4 xl:p-4"
+              key={`project${i}`}
+            >
+              <div className="b-container-card bg-b-card-sec p-4 sm:p-6 rounded-2xl text-white max-w-5xl flex-auto">
+                <div className="grid grid-cols-8 gap-4">
+                  <div className="col-span-8 sm:col-span-4 content-center">
+                    <img
+                      src={val.img}
+                      className="rounded-2xl max-w-full sm:max-w-96 sm:w-96 max-h-72 sm:h-72 border-4 border-white"
+                      alt="bitcoin-expert"
+                    />
+                  </div>
+                  <div className="col-span-8 sm:col-span-4 ">
+                    <div className="grid grid-cols-4 gap-4">
+                      <div className="col-span-3 text-lg">{val.title}</div>
+                      <div className="col-span-1 float-right">
+                        <img
+                          src={val.icon}
+                          className="border-2 border-white w-8 h-8 rounded-full float-right"
+                          alt="indoFlag"
+                        />
                       </div>
+                      {val.spec.map((spec, indexSpec) => {
+                        return (
+                          <React.Fragment key={`spec${indexSpec}`}>
+                            <div className="col-span-2 text-sm">
+                              {spec.title}
+                            </div>
+                            <div className="col-span-2 text-sm">
+                              : {spec.value}
+                            </div>
+                          </React.Fragment>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
               </div>
-            );
-          }
-        )}
+            </div>
+          );
+        })}
         {/* <div className="b-section-subtitle text-center pt-4 pb-6">
           <p className="max-w-xl text-white">
             These five projects will be merged and formed into a single holding
@@ -257,4 +259,4 @@ const AirCooledMiner: React.FC = () => {
   );
 };
 
-export default AirCooledMiner;
+export default ImmersionCooledMiner;

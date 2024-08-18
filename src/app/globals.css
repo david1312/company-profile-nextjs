@@ -90,6 +90,9 @@ main section {
   color: #01c7eb !important;
 }
 
+.c-orange {
+  color: rgb(254, 157, 0) !important;
+}
 .b-bold {
   font-weight: bold !important;
 }

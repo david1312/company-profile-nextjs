@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import moduleName from "@/src/assets/images/common/Academy.webp";
+import moduleName from "@/src/assets/images/common/btc2.jpeg";
 
 const Partneship: React.FC = () => {
   return (
