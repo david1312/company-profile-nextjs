@@ -8,11 +8,14 @@ import usePingServer from "../hooks/usePing";
 import { useEffect } from "react";
 
 export default function Home() {
-  const { serverStatus, pingServer } = usePingServer();
+  const { pingServer } = usePingServer();
 
   useEffect(() => {
-    pingServer(); // Automatically ping the server when the component mounts
-  }, [pingServer]); // Empty dependency array ensures this runs only once
+    console.log("hello");
+
+    pingServer();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Empty dependency array ensures this runs only once
 
   return (
     <div className="flex flex-col min-h-screen first-section">
@@ -25,9 +28,9 @@ export default function Home() {
         />
 
         <p className="text-lg max-w-xl text-center ">
-          Contribute to securing and building the bitcoin blockchain network
-          infrastructure and turning electrical energy into store of value and
-          bringing it to the Indonesian people society.
+          hello xxContribute to securing and building the bitcoin blockchain
+          network infrastructure and turning electrical energy into store of
+          value and bringing it to the Indonesian people society.
         </p>
         <br />
         <p className="cool-text">

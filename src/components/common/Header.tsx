@@ -4,11 +4,29 @@ import Link from "next/link";
 import logo from "@/src/assets/images/icon/logo-green.png";
 import "./Header.css";
 import { MegaMenu, Navbar, Toast } from "flowbite-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Header: React.FC = () => {
   const [langID, setLangID] = useState<boolean>(true);
   const [showToast, setShowToast] = useState<boolean>(false);
+  console.log("this is header");
+
+  const fetchData = async () => {
+    try {
+      const res = await axios.get("/api/scraping", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      console.log(res);
+      console.log("thisis data", res.data);
+
+      localStorage.setItem("test", res.data?.raw);
+      // console.log({ data, res });
+    } catch (error) {}
+  };
 
   const onClickLang = (isID: boolean) => {
     setShowToast(true);
@@ -88,6 +106,10 @@ const Header: React.FC = () => {
       subMenu: [],
     },
   ];
+
+  useEffect(() => {
+    fetchData(); // Fetch the data when the component mounts
+  }, []);
   return (
     <>
       <div className="top-bar">
