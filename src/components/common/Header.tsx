@@ -6,13 +6,13 @@ import "./Header.css";
 import { MegaMenu, Navbar, Toast } from "flowbite-react";
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
-import { headerKey } from "@/src/constants";
-import { HeaderDataResponse } from "@/src/types/apiResponses";
+import { headerKey, NAV_MENUS } from "@/src/constants/index";
+import { ScrapingResponse } from "@/src/types/apiResponses";
 
 const Header: React.FC = () => {
   const [langID, setLangID] = useState<boolean>(true);
   const [showToast, setShowToast] = useState<boolean>(false);
-  const [headerData, setHeaderData] = useState<HeaderDataResponse>({
+  const [headerData, setHeaderData] = useState<ScrapingResponse>({
     btcDifficulty: "86.87",
     btcIdr: "935,967,272.00",
     hashRate: "643.38",
@@ -29,78 +29,10 @@ const Header: React.FC = () => {
       setShowToast(false);
     }, 2000);
   };
-  const MENUS = [
-    {
-      id: 1,
-      to: "/",
-      title: "Company",
-      subMenu: [
-        { title: "About Us", to: "/", id: 11 },
-        { title: "Team & Management Structures", to: "/coming-soon", id: 12 },
-        {
-          title: "BitBoltz Academy",
-          to: "/operation/bitboltz-academy",
-          id: 22,
-        },
-        // {
-        //   title: "Company Structures ",
-        //   to: "/coming-soon",
-        //   id: 13,
-        // },
-        // {
-        //   title: "Tata Kelola Perusahaan ",
-        //   to: "/coming-soon",
-        //   id: 14,
-        // },
-        // { title: "Careers ", to: "/coming-soon", id: 15 },
-        // { title: "ESG ", to: "/coming-soon", id: 16 },
-      ],
-    },
-    {
-      id: 2,
-      to: "/",
-      title: "Operation",
-      subMenu: [
-        { title: "Bitcoin Mining", to: "/operation/bitcoin-mining", id: 21 },
-      ],
-    },
-    {
-      id: 3,
-      to: "/",
-      title: "Bitcoin",
-      subMenu: [
-        { title: "Bitcoin Overview", to: "/coming-soon", id: 31 },
-        { title: "Blog & News", to: "/coming-soon", id: 32 },
-      ],
-    },
-    {
-      id: 4,
-      to: "/",
-      title: "Investor Relations",
-      subMenu: [
-        { title: "Financial Highlights", to: "/coming-soon", id: 33 },
-        { title: "Deviden & Yields", to: "/coming-soon", id: 34 },
-        { title: "Annual Reports", to: "/coming-soon", id: 35 },
-        { title: "Event & Press Released", to: "/coming-soon", id: 36 },
-      ],
-    },
-    {
-      id: 5,
-      to: "/coming-soon",
-      title: "Partnership",
-      subMenu: [],
-    },
-    {
-      id: 6,
-      to: "/contact-us",
-      title: "Contact Us",
-      subMenu: [],
-    },
-  ];
 
   const fetchData = async () => {
     try {
-      const res = await axios.get<HeaderDataResponse>("/api/scraping", {
+      const res = await axios.get<ScrapingResponse>("/api/scraping", {
         headers: {
           "Content-Type": "application/json",
         },
@@ -116,7 +48,7 @@ const Header: React.FC = () => {
   const checkAndFetchData = useCallback(() => {
     const storedData = localStorage.getItem(headerKey);
     if (storedData) {
-      const parsedData: HeaderDataResponse = JSON.parse(storedData);
+      const parsedData: ScrapingResponse = JSON.parse(storedData);
       const storedDate = parsedData.time;
 
       const currentDate = new Date().toISOString().split("T")[0];
@@ -153,7 +85,7 @@ const Header: React.FC = () => {
           </Navbar.Brand>
           <Navbar.Toggle className="ml-4" />
           <Navbar.Collapse>
-            {MENUS.map((val) => {
+            {NAV_MENUS.map((val) => {
               if (val.subMenu.length > 0) {
                 return (
                   <MegaMenu.Dropdown

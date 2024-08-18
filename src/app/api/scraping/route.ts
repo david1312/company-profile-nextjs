@@ -6,11 +6,11 @@ import { mockHashrate } from "@/public/mocks/scrap-hashrate";
 import { mockDifficulty } from "@/public/mocks/scrap-difficulty";
 import { mockBTCIDR } from "@/public/mocks/scrap-btcidr";
 import { formatNumber } from "@/src/utils/common";
-import { HeaderDataResponse, ErrorResponse } from "@/src/types/apiResponses";
+import { ScrapingResponse, ErrorResponse } from "@/src/types/apiResponses";
 
 export async function GET(
   request: Request
-): Promise<NextResponse<HeaderDataResponse | ErrorResponse>> {
+): Promise<NextResponse<ScrapingResponse | ErrorResponse>> {
   const useMockData = process.env.MOCK_MODE === "true";
 
   try {
@@ -62,7 +62,7 @@ export async function GET(
       btcDifficulty: formatNumber(btcDifficulty),
       btcIdr: formatNumber(btcIDR),
       time: new Date().toISOString().split("T")[0],
-    } as HeaderDataResponse);
+    } as ScrapingResponse);
   } catch (error) {
     console.error("Error scraping data:", error);
 

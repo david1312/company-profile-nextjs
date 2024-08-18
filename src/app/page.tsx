@@ -3,7 +3,7 @@
 
 import logoGreenText from "@/src/assets/images/icon/logo-green-text.png";
 import Image from "next/image";
-import { LIST_CARD } from "@/src/constants/data";
+import { LIST_CARD } from "@/src/constants/index";
 import usePingServer from "../hooks/usePing";
 import { useEffect } from "react";
 
@@ -26,9 +26,9 @@ export default function Home() {
         />
 
         <p className="text-lg max-w-xl text-center ">
-          BRoo xxContribute to securing and building the bitcoin blockchain
-          network infrastructure and turning electrical energy into store of
-          value and bringing it to the Indonesian people society.
+          Contribute to securing and building the bitcoin blockchain network
+          infrastructure and turning electrical energy into store of value and
+          bringing it to the Indonesian people society.
         </p>
         <br />
         <p className="cool-text">

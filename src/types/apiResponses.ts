@@ -1,6 +1,6 @@
 // src/types/apiResponses.ts
 
-export interface HeaderDataResponse {
+export interface ScrapingResponse {
   hashRate: string;
   btcDifficulty: string;
   btcIdr: string;

@@ -3,10 +3,10 @@ import {
   CURRENT_PROJECT,
   LIST_PROJECT,
   PROJECT_COMBINED,
-} from "@/src/constants/data";
+} from "@/src/constants/index";
 import React from "react";
 
-const BitcoinMining: React.FC = () => {
+const AirCooledMiner: React.FC = () => {
   return (
     <div className="flex flex-col first-section">
       <div className="bg-b-line p-2 sm:p-4 md:p-4 lg:p-4 xl:p-4">
@@ -171,4 +171,4 @@ const BitcoinMining: React.FC = () => {
   );
 };
 
-export default BitcoinMining;
+export default AirCooledMiner;

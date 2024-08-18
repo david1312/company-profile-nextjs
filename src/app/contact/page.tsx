@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "./contact-us.module.css";
+import styles from "./contact.module.css";
 import { Button, FloatingLabel, Textarea } from "flowbite-react";
 
 const ContactUs: React.FC = () => {
