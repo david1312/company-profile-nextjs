@@ -3,7 +3,6 @@ import Header from "@/src/components/common/Header";
 import icon from "@/src/app/favicon.ico";
 import "./globals.css";
 import Footer from "@/src/components/common/Footer";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Bitboltz Indonesia",
@@ -18,6 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body>
         <Header />
         <main>{children}</main>
