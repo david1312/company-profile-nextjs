@@ -38,7 +38,7 @@ const AirCooledMiner: React.FC = () => {
               <div className="b-container-card bg-b-card-sec p-4 sm:p-6 rounded-2xl text-white max-w-5xl flex-auto">
                 <div className="grid grid-cols-10 gap-4">
                   <div className="col-span-10 content-center text-center">
-                    Bitboltz Mining Performance "as September 2024"
+                    Bitboltz Mining Performance `as September 2024`
                   </div>
                   <div
                     className={`col-span-2 content-center text-center gap-2 ${styles.currentMiningContent}`}
