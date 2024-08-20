@@ -7,7 +7,7 @@ import { MegaMenu, Navbar, Toast } from "flowbite-react";
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { headerKey, NAV_MENUS } from "@/src/constants/index";
-import { ScrapingResponse } from "@/src/types/apiResponses";
+import { ScrapingResponse } from "@/src/interfaces/apiResponses";
 
 const Header: React.FC = () => {
   const [langID, setLangID] = useState<boolean>(true);

@@ -2,10 +2,8 @@
 import Image from "next/image";
 import styles from "./contact.module.css";
 import { Button, FloatingLabel, Textarea } from "flowbite-react";
-import youtube from "@/src/assets/images/icon/youtube.png";
-import instagram from "@/src/assets/images/icon/instagram.png";
-import facebook from "@/src/assets/images/icon/facebook.png";
-import twitter from "@/src/assets/images/icon/twitter-new.png";
+import { LIST_SOCIAL_MEDIA } from "@/src/constants";
+import Link from "next/link";
 
 const ContactUs: React.FC = () => {
   return (
@@ -133,38 +131,20 @@ const ContactUs: React.FC = () => {
             Stay up-to-date with our social media:
           </div>
           <div className={styles.socialMediaRow}>
-            <div className={styles.socialMediaItem}>
-              <Image
-                src={youtube.src}
-                width={48}
-                height={48}
-                alt="Youtube Account"
-              />
-            </div>
-            <div className={styles.socialMediaItem}>
-              <Image
-                src={instagram.src}
-                width={50}
-                height={50}
-                alt="IG Account"
-              />
-            </div>
-            <div className={styles.socialMediaItem}>
-              <Image
-                src={twitter.src}
-                width={32}
-                height={32}
-                alt="Twitter Account"
-              />
-            </div>
-            <div className={styles.socialMediaItem}>
-              <Image
-                src={facebook.src}
-                width={36}
-                height={36}
-                alt="Facebook Account"
-              />
-            </div>
+            {LIST_SOCIAL_MEDIA.map((val, index) => {
+              return (
+                <div className={styles.socialMediaItem} key={index}>
+                  <Link href={val.url} target="_blank">
+                    <Image
+                      src={val.image}
+                      width={val.width}
+                      height={val.height}
+                      alt={val.alt}
+                    />
+                  </Link>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

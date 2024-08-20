@@ -6,7 +6,7 @@ import { mockHashrate } from "@/public/mocks/scrap-hashrate";
 import { mockDifficulty } from "@/public/mocks/scrap-difficulty";
 import { mockBTCIDR } from "@/public/mocks/scrap-btcidr";
 import { formatNumber } from "@/src/utils/common";
-import { ScrapingResponse, ErrorResponse } from "@/src/types/apiResponses";
+import { ScrapingResponse, ErrorResponse } from "@/src/interfaces/apiResponses";
 
 export async function GET(
   request: Request

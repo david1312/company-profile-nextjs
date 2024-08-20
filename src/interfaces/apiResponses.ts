@@ -1,5 +1,3 @@
-// src/types/apiResponses.ts
-
 export interface ScrapingResponse {
   hashRate: string;
   btcDifficulty: string;

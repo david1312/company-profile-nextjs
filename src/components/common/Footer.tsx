@@ -2,12 +2,8 @@
 "use client";
 import Link from "next/link";
 import "./Footer.css";
-import youtube from "@/src/assets/images/icon/youtube.png";
-import instagram from "@/src/assets/images/icon/instagram.png";
-import facebook from "@/src/assets/images/icon/facebook.png";
-import twitter from "@/src/assets/images/icon/twitter-new.png";
 import Image from "next/image";
-import { NAV_MENUS } from "@/src/constants";
+import { LIST_SOCIAL_MEDIA, NAV_MENUS } from "@/src/constants";
 
 const Footer: React.FC = () => {
   return (
@@ -95,46 +91,20 @@ const Footer: React.FC = () => {
             <br />
             <p>Connect with us in social media</p>
             <div className={"footer-social"}>
-              <div className={"footer-social-item"}>
-                <Link href={"https://www.youtube.com/"} target="_blank">
-                  <Image
-                    src={youtube.src}
-                    width={36}
-                    height={36}
-                    alt="Youtube Account"
-                  />
-                </Link>
-              </div>
-              <div className={"footer-social-item"}>
-                <Link href={"https://www.youtube.com/"} target="_blank">
-                  <Image
-                    src={instagram.src}
-                    width={36}
-                    height={36}
-                    alt="Ig Account"
-                  />
-                </Link>
-              </div>
-              <div className={"footer-social-item"}>
-                <Link href={"https://www.youtube.com/"} target="_blank">
-                  <Image
-                    src={twitter.src}
-                    width={36}
-                    height={36}
-                    alt="Twitter Account"
-                  />
-                </Link>
-              </div>
-              <div className={"footer-social-item"}>
-                <Link href={"https://www.youtube.com/"} target="_blank">
-                  <Image
-                    src={facebook.src}
-                    width={36}
-                    height={36}
-                    alt="Facebook Account"
-                  />
-                </Link>
-              </div>
+              {LIST_SOCIAL_MEDIA.map((val, index) => {
+                return (
+                  <div className={"footer-social-item"} key={index}>
+                    <Link href={val.url} target="_blank">
+                      <Image
+                        src={val.image}
+                        width={val.width}
+                        height={val.height}
+                        alt={val.alt}
+                      />
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

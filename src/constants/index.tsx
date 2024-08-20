@@ -13,11 +13,57 @@ import project2 from "@/src/assets/images/common/project2.webp";
 import project3 from "@/src/assets/images/common/project3.webp";
 import project4 from "@/src/assets/images/common/project4.webp";
 import solarproj from "@/src/assets/images/common/solar-banner.jpg";
+import youtube from "@/src/assets/images/icon/youtube.png";
+import instagram from "@/src/assets/images/icon/instagram.png";
+import facebook from "@/src/assets/images/icon/facebook.png";
+import twitter from "@/src/assets/images/icon/twitter-new.png";
 
 interface Card {
   title: string;
   content: React.ReactNode;
   image: string;
+}
+
+interface ProjectSpec {
+  title: string;
+  value: string;
+}
+
+interface Project {
+  title: string;
+  spec: ProjectSpec[];
+  icon: string;
+  img: string;
+  type: string; // This can be a specific type or an enum if you have predefined types
+}
+
+interface CurrentProject {
+  title: string;
+  spec: ProjectSpec[];
+  icon: string;
+  img: string;
+}
+
+interface NavSubMenu {
+  title: string;
+  to: string;
+  id: number;
+}
+
+interface NavMenu {
+  id: number;
+  to: string;
+  title: string;
+  subMenu: NavSubMenu[];
+  inFooter: boolean;
+}
+
+interface SocialMedia {
+  image: string;
+  height: number;
+  width: number;
+  alt: string;
+  url: string;
 }
 
 export const LIST_CARD: Card[] = [
@@ -183,7 +229,7 @@ export const MINING_TYPE = {
   OTHERS: "OTHERS",
 };
 
-export const LIST_PROJECT = [
+export const LIST_PROJECT: Project[] = [
   {
     title: "Air Cooler & Hydro Bitcoin Mining Farm",
     spec: [
@@ -266,7 +312,7 @@ export const LIST_PROJECT = [
   },
 ];
 
-export const CURRENT_PROJECT = [
+export const CURRENT_PROJECT: CurrentProject[] = [
   {
     title: "Our Current Bitcoin Mining Farm Capacity “as September 2024”",
     spec: [
@@ -281,7 +327,7 @@ export const CURRENT_PROJECT = [
   },
 ];
 
-export const PROJECT_COMBINED = [
+export const PROJECT_COMBINED: CurrentProject[] = [
   {
     title:
       "BitBoltz Bitcoin Mining Capacity (Planned After All Projects are Merged)",
@@ -303,7 +349,7 @@ export const PROJECT_COMBINED = [
 
 export const headerKey = "header-data";
 
-export const NAV_MENUS = [
+export const NAV_MENUS: NavMenu[] = [
   {
     id: 1,
     to: "/",
@@ -375,5 +421,36 @@ export const NAV_MENUS = [
     title: "Contact",
     subMenu: [],
     inFooter: false,
+  },
+];
+
+export const LIST_SOCIAL_MEDIA: SocialMedia[] = [
+  {
+    image: youtube.src,
+    width: 40,
+    height: 40,
+    alt: "youtube icon",
+    url: "https://youtube.com/@bitboltz?si=GtRLr-rZ2AEvuKAx",
+  },
+  {
+    image: instagram.src,
+    width: 40,
+    height: 40,
+    alt: "instagram icon",
+    url: "https://www.instagram.com/bitboltz_group?utm_source=qr&igsh=aGR5YzJzbDZuZXQx",
+  },
+  {
+    image: twitter.src,
+    width: 36,
+    height: 36,
+    alt: "twitter icon",
+    url: "https://x.com/bitboltz?t=q5SOvdQS3lKDjKUZ4rXfvg&s=09",
+  },
+  {
+    image: facebook.src,
+    width: 40,
+    height: 40,
+    alt: "facebook icon",
+    url: "https://www.facebook.com/share/dGDW1FRjfCLXkoFN/?mibextid=qi2Omg",
   },
 ];
