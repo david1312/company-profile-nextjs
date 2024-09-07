@@ -85,12 +85,12 @@ const Header: React.FC = () => {
           </Navbar.Brand>
           <Navbar.Toggle className="ml-4" />
           <Navbar.Collapse>
-            {NAV_MENUS.map((val) => {
+            {NAV_MENUS.map((val, index) => {
               if (val.subMenu.length > 0) {
                 return (
                   <MegaMenu.Dropdown
                     toggle={<div className="b-link">{val.title}</div>}
-                    key={`MenuHeader${val.id}`}
+                    key={`MenuHeader${index}`}
                   >
                     <ul className="grid grid-cols-2 ">
                       <div className="space-y-4 p-4">
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
                 );
               }
               return (
-                <Link href={val.to} key={`MenuHeader${val.id}`}>
+                <Link href={val.to} key={`MenuHeader${index}`}>
                   {val.title}
                 </Link>
               );

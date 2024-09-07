@@ -12,6 +12,7 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "axios": "^1.7.4",
+    "chart.js": "^4.4.4",
     "cheerio": "^1.0.0",
     "flowbite": "^2.4.1",
     "flowbite-react": "^0.10.1",

@@ -36,8 +36,8 @@ const Partneship: React.FC = () => {
                     <br /> <br />
                     <span className="text-sm">
                       Contact us at:{" "}
-                      <a href="mailto:ir@bitboltz.co.id" className="c-blue">
-                        ir@bitboltz.co.id
+                      <a href="mailto:jv@bitboltz.co.id" className="c-blue">
+                        jv@bitboltz.co.id
                       </a>
                     </span>
                   </div>

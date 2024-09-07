@@ -356,6 +356,7 @@ export const NAV_MENUS: NavMenu[] = [
     title: "Company",
     subMenu: [
       { title: "About Us", to: "/", id: 11 },
+      { title: "Team & Management", to: "/coming-soon", id: 31 },
       { title: "Partnership", to: "/company/partnership", id: 13 },
     ],
     inFooter: true,
