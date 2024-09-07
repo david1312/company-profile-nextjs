@@ -3,7 +3,7 @@
 import Link from "next/link";
 import "./Footer.css";
 import Image from "next/image";
-import { LIST_SOCIAL_MEDIA, NAV_MENUS } from "@/src/constants";
+import { LIST_SOCIAL_MEDIA, NAV_MENUS } from "@/src/constants/config";
 
 const Footer: React.FC = () => {
   return (
@@ -19,8 +19,8 @@ const Footer: React.FC = () => {
                 <div key={index}>
                   <h4>{val.title}</h4>
                   <ul>
-                    {val.subMenu.map((sub) => (
-                      <li key={`subMenu${sub.id}`}>
+                    {val.subMenu.map((sub, index) => (
+                      <li key={`subMenu${index}`}>
                         <Link href={sub.to} className="b-link text-white">
                           {sub.title}
                         </Link>

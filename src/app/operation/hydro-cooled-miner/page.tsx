@@ -3,7 +3,7 @@ import {
   CURRENT_PROJECT,
   LIST_PROJECT,
   MINING_TYPE,
-} from "@/src/constants/index";
+} from "@/src/constants/config";
 import hashRate from "@/src/assets/images/common/hashrate.webp";
 import electric from "@/src/assets/images/common/electric.webp";
 import energy from "@/src/assets/images/common/energy.webp";

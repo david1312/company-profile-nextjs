@@ -18,6 +18,10 @@ import instagram from "@/src/assets/images/icon/instagram.png";
 import facebook from "@/src/assets/images/icon/facebook.png";
 import twitter from "@/src/assets/images/icon/twitter-new.png";
 
+import team1 from "@/src/assets/images/team/team1.webp";
+import team2 from "@/src/assets/images/team/team2.webp";
+import team3 from "@/src/assets/images/team/team3.webp";
+
 interface Card {
   title: string;
   content: React.ReactNode;
@@ -47,11 +51,9 @@ interface CurrentProject {
 interface NavSubMenu {
   title: string;
   to: string;
-  id: number;
 }
 
 interface NavMenu {
-  id: number;
   to: string;
   title: string;
   subMenu: NavSubMenu[];
@@ -351,64 +353,56 @@ export const headerKey = "header-data";
 
 export const NAV_MENUS: NavMenu[] = [
   {
-    id: 1,
     to: "/",
     title: "Company",
     subMenu: [
-      { title: "About Us", to: "/", id: 11 },
-      { title: "Team & Management", to: "/coming-soon", id: 31 },
-      { title: "Partnership", to: "/company/partnership", id: 13 },
+      { title: "About Us", to: "/" },
+      { title: "Team & Management", to: "/company/team-management" },
+      { title: "Partnership", to: "/company/partnership" },
     ],
     inFooter: true,
   },
   {
-    id: 2,
     to: "/",
     title: "Operations",
     subMenu: [
-      { title: "Overview", to: "/coming-soon", id: 21 },
-      { title: "Air Cooled Miners", to: "/operation/air-cooled-miner", id: 22 },
+      { title: "Overview", to: "/coming-soon" },
+      { title: "Air Cooled Miners", to: "/operation/air-cooled-miner" },
       {
         title: "Hydro Cooled Miners",
         to: "/operation/hydro-cooled-miner",
-        id: 23,
       },
       {
         title: "Immersion Cooled Miners",
         to: "/operation/immersion-cooled-miner",
-        id: 24,
       },
     ],
     inFooter: true,
   },
   {
-    id: 3,
     to: "/",
     title: "Bitcoin",
     subMenu: [
-      { title: "Bitcoin Overview", to: "/coming-soon", id: 31 },
+      { title: "Bitcoin Overview", to: "/coming-soon" },
       {
         title: "BitBoltz Academy",
         to: "/bitcoin/bitboltz-academy",
-        id: 32,
       },
     ],
     inFooter: false,
   },
   {
-    id: 4,
     to: "/",
     title: "Investors",
     subMenu: [
-      { title: "Financial Highlights", to: "/coming-soon", id: 41 },
-      { title: "Deviden & Yields", to: "/coming-soon", id: 42 },
-      { title: "Annual Reports", to: "/coming-soon", id: 43 },
-      { title: "News & Events", to: "/coming-soon", id: 44 },
+      { title: "Financial Highlights", to: "/coming-soon" },
+      { title: "Deviden & Yields", to: "/coming-soon" },
+      { title: "Annual Reports", to: "/coming-soon" },
+      { title: "News & Events", to: "/coming-soon" },
     ],
     inFooter: false,
   },
   {
-    id: 5,
     to: "/coming-soon",
     title: "Careers",
     subMenu: [],
@@ -416,7 +410,6 @@ export const NAV_MENUS: NavMenu[] = [
   },
 
   {
-    id: 6,
     to: "/contact",
     title: "Contact",
     subMenu: [],
@@ -452,5 +445,46 @@ export const LIST_SOCIAL_MEDIA: SocialMedia[] = [
     height: 40,
     alt: "facebook icon",
     url: "https://www.facebook.com/share/dGDW1FRjfCLXkoFN/?mibextid=qi2Omg",
+  },
+];
+
+interface Breakpoints {
+  smallDevice: number;
+  mobile: number;
+  tablet: number;
+  desktop: number;
+}
+export const breakpoints: Readonly<Breakpoints> = {
+  smallDevice: 481,
+  mobile: 769,
+  tablet: 1025,
+  desktop: 1201,
+};
+
+interface TeamMember {
+  image: string;
+  name: string;
+  title: string;
+  desc: string;
+}
+
+export const TEAM_MANAGEMENT: TeamMember[] = [
+  {
+    image: team3.src,
+    name: "David Bernadi",
+    title: "CTO",
+    desc: "Engaged and working in IT & Cybersecurity since 2019, focusing on blockchain technology and AI since 2021 which continues to this day.",
+  },
+  {
+    image: team1.src,
+    name: "Michael Kristianto",
+    title: "CEO",
+    desc: "An entrepreneur and investor. Has a deep understanding of capital markets investment, experiences in business operation management and bitcoin network, actively engaged in bitcoin network & bitcoin mining since 2020.",
+  },
+  {
+    image: team2.src,
+    name: "Sugiono",
+    title: "Electrical Engineering ",
+    desc: "A graduate in electrical engineering in 1983, with over 40 years of experience in electro & electrical engineering.",
   },
 ];
