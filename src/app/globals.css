@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #0a0b0f;
+}
+
+main section {
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+.App {
+  text-align: center;
+}
+
+.hero {
+  padding: 50px;
+  background-color: #f0f4f8;
+  text-align: left;
+}
+
+.hero h1 {
+  color: #0073e6;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #333;
+}
+
+.hero button {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0073e6;
+  border: none;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: #0f1601;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-navy {
+  background-color: #0a192f;
+}
+
+.section-title {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(90deg, #01c7eb, #03f66f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 20px;
+  padding-bottom: 50px;
+}
+
+.bg-b-black {
+  background-color: #0a0b0f;
+}
+
+.bg-b-line {
+  background-image: linear-gradient(#0a0b0f, #021a2a);
+}
+.bg-b-second {
+  background-color: #021a2a;
+}
+
+.bg-b-third {
+  background-color: #192129;
+}
+
+.bg-b-fourth {
+  background-color: #dadada;
+}
+.bg-b-card {
+  background-color: #151a2a;
+}
+
+.bg-b-card-sec {
+  background-color: #021a2a;
+}
+
+.c-black {
+  color: #09090b !important;
+}
+
+.c-blue {
+  color: #01c7eb !important;
+}
+
+.c-orange {
+  color: rgb(254, 157, 0) !important;
+}
+.b-bold {
+  font-weight: bold !important;
+}
+
+.b-section-title {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.b-section-subtitle {
+  display: flex;
+  justify-content: center;
+  margin-top: -10px;
+  font-size: 1rem;
+}
+
+.flex.flex-col.min-h-screen {
+  background-color: #0a0b0f !important;
+}
+
+.coming-soon-pg {
+  background-image: url("../assets//images//bg//btc.webp");
+  background-position: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .coming-soon-pg {
+    background-image: url("../assets//images//bg//btc.webp");
+    background-position: center;
+  }
+}
+
+.cool-text {
+  background: linear-gradient(90deg, #01c7eb, #03f66f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.layout {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.layout.animating {
+  opacity: 0;
+}
+
+.pg-container {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  flex-direction: row;
+}
+
+.pg-input-field {
+  display: flex;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+}
+
+.pg-input-field:focus {
+  border: none;
+  border: 2px solid greenyellow;
+}
+
+.basic-layout {
+  padding: 10px;
+}
+
+.section-title {
+  text-align: center;
+}

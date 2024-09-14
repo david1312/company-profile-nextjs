@@ -1,0 +1,9 @@
+.currentMiningImage {
+  border-radius: 8px;
+  padding-top: 10px;
+  padding-bottom: 4px;
+}
+
+.currentMiningContent {
+  text-align: -webkit-center;
+}

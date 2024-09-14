@@ -1,0 +1,79 @@
+.header {
+  background-image: url("../../assets//images//common//solar-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 75vh;
+}
+
+.aboutHeaderTxt {
+  flex-direction: column-reverse;
+  display: flex;
+  /* align-items: end; */
+  width: 100%;
+
+  padding-bottom: 0.2rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.leftSide {
+  display: flex;
+  width: 40%;
+}
+
+.leftTitle {
+  font-size: 1.5rem;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.firstText {
+  font-weight: normal;
+  text-align: left;
+  font-size: 2;
+  padding-bottom: 0.5rem;
+}
+
+.secondText {
+  font-weight: normal;
+  text-align: left;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+
+.leftSideFirst {
+  font-size: 14px;
+}
+
+.tableContact {
+  font-size: 12px;
+}
+
+.tableContactSeparator {
+  padding: 0px 4px;
+}
+
+.btnCommon {
+  background-image: linear-gradient(90deg, #eb7601, #f4c476);
+  padding: 2px 15px;
+  border-radius: 4rem;
+  border: none;
+}
+
+.socialMediaRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialMediaItem {
+  text-align: -webkit-center;
+  width: 48px;
+  padding: 4px;
+}
