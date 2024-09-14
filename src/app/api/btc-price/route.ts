@@ -28,13 +28,12 @@ export async function GET(
     const { data } = await axios.get(
       url.replace(":id_indexes", BTC_IDR_INDEX),
       {
-        headers: {
-          "X-CoinAPI-Key": process.env.API_KEY || "", // Assuming it's a Bearer token, modify if necessary
-        },
         params: {
+          apikey: process.env.API_KEY,
           period_id: COIN_API_CONFIG.period,
           time_start: `${timeEnd}T00:00:00Z`,
           time_end: `${currentDate}T23:59:59Z`,
+          limit: 100,
         },
       }
     );

@@ -32,7 +32,7 @@ interface LineChartProps {
 const LineChart: React.FC<LineChartProps> = ({ btcPrices, idrRate }) => {
   console.log({ btcPrices, idrRate });
   const { labels, prices } =
-    btcPrices.length > 0
+    btcPrices && btcPrices.length > 0
       ? btcPrices.reduce(
           (acc, price) => {
             acc.labels.push(

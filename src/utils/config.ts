@@ -234,7 +234,7 @@ export const NAV_MENUS: NavMenu[] = [
     title: "Company",
     subMenu: [
       { title: "About Us", to: "/" },
-      { title: "Team & Management", to: "/company/team-management" },
+      { title: "Team & Management", to: "/coming-soon" },
       { title: "Partnership", to: "/company/partnership" },
     ],
     inFooter: true,
